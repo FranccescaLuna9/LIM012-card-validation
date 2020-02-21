@@ -1,4 +1,4 @@
-# Tarjeta de crédito válida FRANCCESCA LUNA - estuvo aqui
+# Tarjeta de crédito válida 
 
 ## Índice
 

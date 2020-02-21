@@ -6,9 +6,29 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+      <img src="img/marca.png" alt="logo de marca">
+    </header>
+    <main>
+      <h2>Ingresar los datos solicitados.</h2>
+      <form id="number">
+        <label for="numberCreditCard"></label>
+        <input
+        type="number" id="numberCreditCard" maxlength="16"  placeholder="number" name="numberCreditCard"
+        required
+        />
+      </form>
+      <form id="user name">
+        <label for="name"></label>
+        <input type="text" id="box-name" placeholder="name" name="box-name"
+        required
+        />
+      </form>
+      <button type="button" id="btn">VALIDAR</button>
+      <button type="button" id="btn1">DESCIFRAR</button>
+
+    </main>
+
     <script src="index.js" type="module"></script>
   </body>
 </html>
