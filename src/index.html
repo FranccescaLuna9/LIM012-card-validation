@@ -1,34 +1,102 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-16">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
+
+   
+
+    <!--link google font css / TIPOGRAFIA -->
+
+    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <img src="img/marca.png" alt="logo de marca">
-    </header>
-    <main>
-      <h2>Ingresar los datos solicitados.</h2>
-      <form id="number">
-        <label for="numberCreditCard"></label>
+  <header>
+      <img src="img/marca.png" alt="logo de marca" id="marca" >
+  </header>
+  <main>
+  <!--PAGINA PRINCIPAL -->
+<section id="paginaprincipal" class="pagina1">    
+  <div class="bienvenida">
+    <h1 id="texto">Por tu seguridad, queremos validar <br> el medio de pago y tus datos. <br> Gracias. </h1>
+    <button id="btnOK">OK</button>
+  </div>
+</section>    
+
+
+<!--PAGINA PARA INGRESAR DATOS DE LA TARJETA-->
+<section id="pagtarjeta" class="pagina2">
+  <div id= "div1"class="datos">
+    <h2 id="instrucciones"> Ingresar datos solicitados. </h2>
+    <div id="tarjeta">
+      <div>
+        <img src="img/tarjetabcpvisa.png"alt="tarjeta-2" width="80%">
+      </div>
+    <!--inicio al formulario-->
+      <!--caja numero de tarjeta-->
+      <form id="number" class="digitar">
+        <label for="digitoTarj"></label>
         <input
-        type="number" id="numberCreditCard" maxlength="16"  placeholder="number" name="numberCreditCard"
-        required
-        />
+        type="text" class="cajasDigitar" id="digitoTarj" maxlength="16"  placeholder="  INGRESAR NUMERO DE TARJETA" name="numberCreditCard"
+        required  />
       </form>
-      <form id="user name">
-        <label for="name"></label>
-        <input type="text" id="box-name" placeholder="name" name="box-name"
+      <!--caja nombre del titular (en js-validar su cumple somo letras Aa) -->
+      <form >
+        <label for="box-name"></label>
+          <input
+        type="text" class="cajasDigitar1"id="box-name" placeholder="  INGRESAR NOMBRE DEL TITULAR" name="box-name"
         required
-        />
+          />
       </form>
-      <button type="button" id="btn">VALIDAR</button>
-      <button type="button" id="btn1">DESCIFRAR</button>
+      <!--caja fecha de la tarjeta -->
+      <form> 
+        <input type="date"  class="cajasDigitar2" id="date" name="date" >
+      </form>
+      <!--caja cvv (en js-validar si cumple con 4 digitos sin espacio) -->
+      <form> 
+        <input type="text"  class="cajaCvv" id="dcvv" name="cvv" maxlength="4" >
+      </form>
+    </div>
+  </div>
+      
+       <button type="button" id="btn" class="validacion">VALIDAR</button>
+       <button type="button" id="btn1" class="validacion" >DESCIFRAR</button>
+      
+</section>  
 
-    </main>
+      
+ <!--PAGINA DE TARJETA VALIDA-->
 
-    <script src="index.js" type="module"></script>
+<section id="pagvalida"class="pagina3">     
+      <div class="alerta">
+        <div class="imgalerta">
+            <img  src="img/proteger.png" alt="alerta de proteccion" width="80%">
+        </div>
+            <h1 class="encabezado1">La tarjeta ,ha sido validada para continuar con una compra segura. </h1>
+        <div class=bolsacomp>
+            <img src="img/bolsa-de-la-compra.png" alt="bolsa-de-la-compra" width="15%">
+        </div>
+        <button id="next" class="btnOK">SEGUIR COMPRA</button>
+      </div>
+</section> 
+
+
+      <!--PAGINA DE TARJETA INVALIDA-->
+<section id="paginvalida" class="pagina 4">
+      <div class="alerta">
+        <div class="imgalerta">
+          <img src="img/alerta.png" alt="alerta algo paso" width="80%">
+        </div>
+          <h1 class="encabezado2">UPS!  Ocurrio un problema!  Verifica tus datos. </h1>
+          <button class="btnOK">OK</button>
+      </div>
+</section>
+  </main>
+
+    
+  <footer></footer>
+  <script src="index.js" type="module"></script>
   </body>
+
 </html>

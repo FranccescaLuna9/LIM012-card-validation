@@ -1,37 +1,55 @@
 import validator from "./validator.js";
+/*console.log(validator.isValid(''));*/
+let pg1 , pg2 , pg3 , pg4 ;
+  document.getElementById("pagtarjeta").style.display="none";
+  document.getElementById("pagvalida").style.display="none";
+  document.getElementById("paginvalida").style.display="none";
 
-// import validator from './validator.js';
+  /*boton de inicio*/
+  const btnInicio = document.getElementById("btnOK");
+  btnInicio.addEventListener("click", () => {
+  document.getElementById("paginaprincipal").style.display="none";
+  document.getElementById("pagtarjeta").style.display = "block";
+  document.getElementById("pagvalida").style.display="none";
+  document.getElementById("paginvalida").style.display="none";
+});
 
-const btn = document.getElementById ('btn');
+/*boton validar*/
+const btnValidar = document.getElementById('btn');
+btnValidar.addEventListener("click", () => {
+ const numeroTarjeta= document.getElementById("digitoTarj").value;
+ const prueba1 = validator.isValid(numeroTarjeta);
+ 
+ console.log(prueba1);
 
-let valid = ()=>{
+ if( prueba1 == true ){
+  document.getElementById("paginaprincipal").style.display="none";
+  document.getElementById("pagtarjeta").style.display="none";
+  document.getElementById("pagvalida").style.display="block";
+  document.getElementById("paginvalida").style.display="none";
+ }else{
+  document.getElementById("paginaprincipal").style.display="none";
+  document.getElementById("pagtarjeta").style.display="none";
+  document.getElementById("pagvalida").style.display="none";
+  document.getElementById("paginvalida").style.display="block";
+ }
+  
+})
 
-  const numero = document.getElementById("numberCreditCard").value;
-  validator.isValid(numero);
 
-  if(validator.isValid(numero)==true){
-    alert("tarjeta valida")
-  }else{
-    alert("tarjeta invalida")
+  btn.addEventListener("click",valid);
+
+   let boton = document.getElementById("btn")
+
+  let mascara = ()=>{
+const numero = document.getElementById("numberCreditCard").value;
+    
+
+   alert(validator.maskify(numero))
+
   }
 
-  
-}
-
-btn.addEventListener("click",valid);
-
-
-let boton1 = document.getElementById("btn1")
-
-let mascara = ()=>{
-  const numero = document.getElementById("numberCreditCard").value;
-  
-
-  alert(validator.maskify(numero))
-
-}
-
-boton1.addEventListener("click",mascara)
+   boton1.addEventListener("click",mascara);
 
 
 
@@ -51,27 +69,3 @@ boton1.addEventListener("click",mascara)
 
 
 
-// const btn = document.getElementById('btn') ;
-// btn.addEventListener('click', () => {
-//   const numberCreditCard = document.getElementById("numberCreditCard").value;
-//   const arrayTarjeta = numberCreditCard.split("");
-//   const arrayInvertido = arrayTarjeta.reverse();
-  
-//   for( let i = 0; i < arrayInvertido.length; i = i+2 ) {
-//     if (i % 2 == 1 ) {
-//       const arrayInvertido = arrayInvertido.join ().split("");
-//     const numero = arrayInvertido *2;
-     
-//     console.log(numero);
-    
-//     }
-    
-    
-    
-
-//   }
-
-  
-  
-// })
-// 78kooooou
